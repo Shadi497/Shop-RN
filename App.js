@@ -1,21 +1,37 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StatusBar } from "expo-status-bar";
+import React from "react";
+import Home from "./components/Home";
+import { ThemeProvider } from "styled-components";
+import { TopStyling } from "./styles";
+import { Provider } from "react-redux";
+import store from "./store";
+import ShopList from "./components/ShopList";
+import ProductList from "./components/ProductList";
+import { ShopDetail } from "./components/ShopDetail";
+import { ScrollView } from "react-native";
 
 export default function App() {
+  const theme = {
+    light: {
+      mainColor: "#242424", // main font color
+      backgroundColor: "#fefafb", // main background color
+    },
+    dark: {
+      mainColor: "#fefafb", // main font color
+      backgroundColor: "#242424", // main background color
+    },
+  };
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <Provider store={store}>
+      <ScrollView>
+        <ThemeProvider theme={theme.light}>
+          <TopStyling>
+            <Home />
+            <ShopList />
+            <StatusBar style="auto" />
+          </TopStyling>
+        </ThemeProvider>
+      </ScrollView>
+    </Provider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
