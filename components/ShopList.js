@@ -1,19 +1,9 @@
-import { Spinner, List } from "native-base";
+import { Spinner } from "native-base";
 import React from "react";
 import { View } from "react-native";
 import { useSelector } from "react-redux";
 import { Txt } from "../styles";
 import { ShopItem } from "./ShopItem";
-import {
-  Container,
-  Header,
-  Content,
-  Card,
-  CardItem,
-  Text,
-  Icon,
-  Right,
-} from "native-base";
 
 const ShopList = () => {
   const shops = useSelector((state) => state.shopReducer.shops);

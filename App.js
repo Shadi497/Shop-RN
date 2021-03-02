@@ -7,7 +7,6 @@ import { Provider } from "react-redux";
 import store from "./store";
 import ShopList from "./components/ShopList";
 import ProductList from "./components/ProductList";
-import { ShopDetail } from "./components/ShopDetail";
 import { ScrollView } from "react-native";
 
 export default function App() {
@@ -28,6 +27,7 @@ export default function App() {
           <TopStyling>
             <Home />
             <ShopList />
+            <ProductList />
             <StatusBar style="auto" />
           </TopStyling>
         </ThemeProvider>

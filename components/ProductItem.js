@@ -1,17 +1,23 @@
-import { ListItem } from "native-base";
 import React from "react";
-import { View, Text } from "react-native";
-import { ImageStyle, V, Detail, TBold } from "../styles";
+import { View } from "react-native";
+import {
+  ProductTBold,
+  ImageStyle,
+  ShopImageStyle,
+  Detail,
+  TBold,
+} from "../styles";
 
-export const ProductItem = ({ product }) => {
+export const ProductItem = ({ product, shop }) => {
   return (
-    <ListItem>
-      <V>
-        <TBold>Products List</TBold>
-        <ImageStyle source={{ uri: product.image }} />
-        <Detail>{product.name}</Detail>
-        <Detail>{product.price} BD</Detail>
-      </V>
-    </ListItem>
+    <View>
+      {shop && <TBold>{shop.name}</TBold> && (
+          <ProductTBold>Products List</ProductTBold>
+        ) && <ShopImageStyle source={{ uri: shop.image }} />}
+
+      <ImageStyle source={{ uri: product.image }} />
+      <Detail>{product.name}</Detail>
+      <Detail>{product.price} BD</Detail>
+    </View>
   );
 };

@@ -31,7 +31,16 @@ export const Txt = styled.Text`
 `;
 export const TBold = styled.Text`
   font-weight: bold;
+  margin-top: 10px;
   text-align: center;
+  margin-left: 70px;
+`;
+
+export const ProductTBold = styled.Text`
+  font-weight: bold;
+  margin-top: 20px;
+  text-align: center;
+  width: 120px;
 `;
 
 export const T = styled.Text`
@@ -40,7 +49,9 @@ export const T = styled.Text`
 `;
 
 export const Detail = styled.Text`
+  margin: 0 0 10px 15px;
   text-align: center;
+  width: 80px;
 `;
 
 export const V = styled.View`
@@ -56,7 +67,13 @@ export const H = styled.View`
 export const ImageStyle = styled.Image`
   width: 80px;
   height: 80px;
-  margin: 25px 0 0 15px;
+  margin: 15px 0 10px 15px;
+`;
+
+export const ShopImageStyle = styled.Image`
+  width: 150px;
+  height: 150px;
+  margin: 15px 0 0 70px;
 `;
 
 // export const ThumbStyle = styled.Thumbnail`
