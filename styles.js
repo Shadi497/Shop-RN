@@ -2,14 +2,13 @@ import styled from "styled-components/native";
 
 export const HomeBackground = styled.ImageBackground`
   flex: 1;
-  width: 100%;
-  height: 100%;
+  resize-mode: stretch;
 `;
 
 export const TopStyling = styled.View`
-  margin-top: 60px;
   align-items: center;
   justify-content: center;
+  height: 40%;
 `;
 
 export const List = styled.View`
@@ -17,7 +16,7 @@ export const List = styled.View`
 `;
 
 export const Title = styled.Text`
-  color: black;
+  color: white;
   font-size: 38px;
   text-align: center;
 `;
@@ -26,14 +25,14 @@ export const Txt = styled.Text`
   color: red;
   font-size: 18px;
   text-align: center;
-  margin: 45px 0 20px 0;
+  margin: 15px 0 20px 0;
   font-weight: bold;
 `;
 export const TBold = styled.Text`
   font-weight: bold;
-  margin-top: 10px;
+  margin-top: 30px;
   text-align: center;
-  margin-left: 70px;
+  font-size: 25px;
 `;
 
 export const ProductTBold = styled.Text`
@@ -46,6 +45,7 @@ export const ProductTBold = styled.Text`
 export const T = styled.Text`
   margin-left: 20px;
   margin-right: 10px;
+  text-align: center;
 `;
 
 export const Detail = styled.Text`
@@ -55,9 +55,10 @@ export const Detail = styled.Text`
 `;
 
 export const V = styled.View`
-  display: flex;
-  flex-direction: column;
   margin-left: 45px;
+  display: flex;
+  flex-direction: row;
+  width: 50%;
 `;
 
 export const H = styled.View`
@@ -71,13 +72,20 @@ export const ImageStyle = styled.Image`
 `;
 
 export const ShopImageStyle = styled.Image`
-  width: 150px;
-  height: 150px;
-  margin: 15px 0 0 70px;
+  width: 250px;
+  height: 250px;
+  margin-left: 55px;
+  margin-top: 0px;
+  resize-mode: center;
 `;
 
-// export const ThumbStyle = styled.Thumbnail`
-//   width: 90px;
-//   height: 90px;
-//   margin-left: 15px;
-// `;
+export const BottomStyling = styled.View`
+  height: 60%;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const ButtonStyled = styled.Text`
+  font-size: 20px;
+  color: #fff;
+`;

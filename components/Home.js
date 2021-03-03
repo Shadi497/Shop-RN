@@ -1,12 +1,27 @@
 import { ImageBackground, View, Text } from "react-native";
 import React from "react";
-import { Title, TopStyling } from "../styles";
+import {
+  Title,
+  TopStyling,
+  HomeBackground,
+  BottomStyling,
+  ButtonStyled,
+} from "../styles";
 
-const Home = () => {
+const Home = ({ navigation }) => {
   return (
-    <View>
-      <Title>Pharmacy</Title>
-    </View>
+    <HomeBackground
+      source={{ uri: "https://wallpaperaccess.com/full/1464882.jpg" }}
+    >
+      <TopStyling>
+        <Title>Pharmacy</Title>
+      </TopStyling>
+      <BottomStyling>
+        <ButtonStyled onPress={() => navigation.navigate("ShopList")}>
+          Shop List
+        </ButtonStyled>
+      </BottomStyling>
+    </HomeBackground>
   );
 };
 

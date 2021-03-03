@@ -1,23 +1,18 @@
+import { Button } from "react-native";
 import React from "react";
 import { View } from "react-native";
-import {
-  ProductTBold,
-  ImageStyle,
-  ShopImageStyle,
-  Detail,
-  TBold,
-} from "../styles";
+import { ImageStyle, Detail } from "../styles";
 
-export const ProductItem = ({ product, shop }) => {
+export const ProductItem = ({ product, navigation }) => {
   return (
-    <View>
-      {shop && <TBold>{shop.name}</TBold> && (
-          <ProductTBold>Products List</ProductTBold>
-        ) && <ShopImageStyle source={{ uri: shop.image }} />}
-
+    <View style={{ marginBottom: "7%" }}>
       <ImageStyle source={{ uri: product.image }} />
       <Detail>{product.name}</Detail>
       <Detail>{product.price} BD</Detail>
+      <Button
+        title="Add to Cart"
+        onPress={() => navigation.navigate("CartList")}
+      ></Button>
     </View>
   );
 };
