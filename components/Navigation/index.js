@@ -8,6 +8,7 @@ import ShopList from "../ShopList";
 import { ShopDetail } from "../ShopDetail";
 import { CartList } from "../Cart/CartList";
 import { CartButton } from "../Buttons/CartButton";
+import { ShopButton } from "../Buttons/ShopButton";
 
 export const RootNavigator = () => {
   const { Navigator, Screen } = createStackNavigator();
@@ -21,7 +22,7 @@ export const RootNavigator = () => {
       <Screen
         name="ShopList"
         component={ShopList}
-        options={{ headerRight: () => <CartButton /> }}
+        options={{ title: "Shop List", headerRight: () => <CartButton /> }}
       />
       <Screen
         name="ShopDetail"
@@ -38,6 +39,7 @@ export const RootNavigator = () => {
         component={CartList}
         options={{
           title: "Shopping Cart",
+          headerRight: () => <ShopButton />,
         }}
       />
     </Navigator>

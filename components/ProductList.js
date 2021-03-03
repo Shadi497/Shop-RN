@@ -1,4 +1,4 @@
-import { Spinner } from "native-base";
+import { List, ListItem, Spinner } from "native-base";
 import React from "react";
 import { ScrollView, View } from "react-native";
 import { useSelector } from "react-redux";
@@ -19,19 +19,17 @@ const ProductList = ({ products, navigation }) => {
           <Spinner />
         </>
       ) : (
-        <>
+        <View
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
           <Txt>Product List</Txt>
-          <View
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
-            {productlist}
-          </View>
-        </>
+          <View>{productlist}</View>
+        </View>
       )}
     </View>
   );

@@ -25,7 +25,7 @@ export const Txt = styled.Text`
   color: red;
   font-size: 18px;
   text-align: center;
-  margin: 15px 0 20px 0;
+  margin: 0px 0 20px 0;
   font-weight: bold;
 `;
 export const TBold = styled.Text`
@@ -49,9 +49,7 @@ export const T = styled.Text`
 `;
 
 export const Detail = styled.Text`
-  margin: 0 0 10px 15px;
   text-align: center;
-  width: 80px;
 `;
 
 export const V = styled.View`
