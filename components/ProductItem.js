@@ -56,11 +56,13 @@ export const ProductItem = ({ product, navigation }) => {
           totalWidth={90}
           style={{ marginBottom: "7%" }}
         />
-        <Button
-          style={{ marginBottom: "7%", color: "black" }}
-          title="Add to Cart"
-          onPress={addTocart}
-        ></Button>
+        {quantity > 0 && (
+          <Button
+            style={{ marginBottom: "7%", color: "black" }}
+            title="Add to Cart"
+            onPress={addTocart}
+          ></Button>
+        )}
       </View>
     </View>
   );

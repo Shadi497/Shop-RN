@@ -10,10 +10,6 @@ const ShopList = ({ navigation }) => {
 
   const loading = useSelector((state) => state.shopReducer.loading);
 
-  const user = useSelector((state) => state.authReducer.user);
-
-  console.log(user);
-
   const shoplist = shops.map((shop) => (
     <ShopItem navigation={navigation} shop={shop} key={shop.id} />
   ));

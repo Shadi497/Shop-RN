@@ -1,4 +1,4 @@
-import { Button } from "native-base";
+import { Button, Text } from "native-base";
 import styled from "styled-components/native";
 
 export const ButtonStyle = styled(Button)`
@@ -8,14 +8,21 @@ export const ButtonStyle = styled(Button)`
   align-items: center;
   justify-content: center;
 `;
-export const SignButtonStyle = styled(Button)`
-  margin: 6% 0 10% 34%;
+export const SignOutButtonStyle = styled(Text)`
+  margin: 0 0 10% 45%;
   width: 30%;
   align-items: center;
   justify-content: center;
 `;
 
-export const SignOutButtonStyle = styled(Button)`
+export const SignInButtonStyle = styled(Text)`
+  margin: 10% 0 10% 40%;
+  width: 30%;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const SignButtonStyle = styled(Button)`
   margin: 6% 0 10% 34%;
   width: 30%;
   align-items: center;
@@ -60,7 +67,7 @@ export const UserTitle = styled.Text`
   color: white;
   font-size: 20px;
   text-align: center;
-  margin-top: 40%;
+  margin-right: 25px;
 `;
 
 export const Txt = styled.Text`
@@ -123,6 +130,13 @@ export const BottomStyling = styled.View`
   height: 20%;
   align-items: center;
   justify-content: center;
+`;
+
+export const Welcome = styled.Text`
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin-top: 40%;
 `;
 
 export const ButtonStyled = styled.Text`

@@ -6,7 +6,6 @@ import { ShopDetail } from "../ShopDetail";
 import { CartList } from "../Cart/CartList";
 import { CartButton } from "../Buttons/CartButton";
 import { ShopButton } from "../Buttons/ShopButton";
-import { User } from "../Buttons/User";
 import SignIn from "../Authentication/SignIn";
 import SignUp from "../Authentication/SignUp";
 
