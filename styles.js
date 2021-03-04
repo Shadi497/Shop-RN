@@ -14,6 +14,13 @@ export const SignButtonStyle = styled(Button)`
   align-items: center;
   justify-content: center;
 `;
+
+export const SignOutButtonStyle = styled(Button)`
+  margin: 6% 0 10% 34%;
+  width: 30%;
+  align-items: center;
+  justify-content: center;
+`;
 export const Signin = styled.View`
   margin-top: 25%;
   margin-left: 14%;
@@ -47,6 +54,13 @@ export const Title = styled.Text`
   color: white;
   font-size: 38px;
   text-align: center;
+`;
+
+export const UserTitle = styled.Text`
+  color: white;
+  font-size: 20px;
+  text-align: center;
+  margin-top: 40%;
 `;
 
 export const Txt = styled.Text`
@@ -106,7 +120,7 @@ export const ShopImageStyle = styled.Image`
 `;
 
 export const BottomStyling = styled.View`
-  height: 60%;
+  height: 20%;
   align-items: center;
   justify-content: center;
 `;

@@ -15,9 +15,9 @@ export default function SignIn() {
 
   const dispatch = useDispatch();
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    dispatch(signin(user));
+    await dispatch(signin(user));
     navigation.replace("ShopList");
     ToastAndroid.show(`Welcome ${user.username}`, ToastAndroid.SHORT);
   };
@@ -30,9 +30,11 @@ export default function SignIn() {
 
       <AuthTextInput
         onChangeText={(username) => setUser({ ...user, username })}
+        value={user.username}
         placeholder="Username"
       ></AuthTextInput>
       <AuthTextInput
+        value={user.password}
         onChangeText={(password) => setUser({ ...user, password })}
         secureTextEntry={true}
         placeholder="Password"

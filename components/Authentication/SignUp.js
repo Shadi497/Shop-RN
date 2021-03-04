@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Text } from "react-native";
+import { Text, ToastAndroid } from "react-native";
 import { useDispatch } from "react-redux";
 import { signin, signup } from "../../store/actions/authActions";
 import { SignButtonStyle, Signin, AuthTextInput } from "../../styles";
@@ -56,7 +56,7 @@ export default function SignUp() {
           placeholder="Last Name"
         ></AuthTextInput>
         <SignButtonStyle onPress={handleSubmit}>
-          <Text style={{ color: "white" }}>Sign In</Text>
+          <Text style={{ color: "white" }}>Sign Up</Text>
         </SignButtonStyle>
         <Text
           style={{ marginBottom: 25 }}

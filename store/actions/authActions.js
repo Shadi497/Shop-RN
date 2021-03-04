@@ -3,29 +3,12 @@ import decode from "jwt-decode";
 import { ToastAndroid } from "react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
-const setUser = async (token) => {
-  // const tokenS = JSON.stringify(token);
-  // console.log(token);
-  // console.log(tokenS);
-  // await AsyncStorage.setItem("Token", tokenS);
-  // instance.defaults.headers.common.Authorization = `Bearer ${JSON.parse(
-  //   tokenS
-  // )}`;
-  // return {
-  //   type: "SET_USER",
-  //   payload: decode(JSON.parse(tokenS)),
-  // };
-  return async (dispatch) => {
-    try {
-      await AsyncStorage.setItem("Token", token);
-      instance.defaults.headers.common.Authorization = `Bearer ${token}`;
-      dispatch({
-        type: SET_USER,
-        payload: decode(token),
-      });
-    } catch (error) {
-      console.log(error);
-    }
+const setUser = (token) => {
+  AsyncStorage.setItem("Token", token);
+  instance.defaults.headers.common.Authorization = `Bearer ${token}`;
+  return {
+    type: "SET_USER",
+    payload: decode(token),
   };
 };
 
@@ -33,8 +16,9 @@ export const signup = (newUser) => {
   return async (dispatch) => {
     try {
       const res = await instance.post("/signup", newUser);
-      await dispatch(setUser(res.data.token));
-      ToastAndroid.show("Successfully signed up", ToastAndroid.SHORT);
+      AsyncStorage.setItem("Token", res.data.token);
+      dispatch(setUser(res.data.token));
+      // ToastAndroid.show("Successfully signed up", ToastAndroid.SHORT);
     } catch (error) {
       console.error(error);
     }
@@ -45,13 +29,16 @@ export const signin = (userData) => {
   return async (dispatch) => {
     try {
       const res = await instance.post("/signin", userData);
-      await dispatch(setUser(res.data.token));
-    } catch (error) {}
+      AsyncStorage.setItem("Token", res.data.token);
+      dispatch(setUser(res.data.token));
+    } catch (error) {
+      console.error(error);
+    }
   };
 };
 
-export const signout = async () => {
-  await AsyncStorage.removeItem("Token");
+export const signout = () => {
+  AsyncStorage.removeItem("Token");
   delete instance.defaults.headers.common.Authorization;
   return {
     type: "SET_USER",
@@ -59,7 +46,7 @@ export const signout = async () => {
   };
 };
 
-export const checkToken = async () => async (dispatch) => {
+export const checkToken = () => async (dispatch) => {
   const token = await AsyncStorage.getItem("Token");
 
   if (token) {
@@ -68,6 +55,7 @@ export const checkToken = async () => async (dispatch) => {
     if (Date.now() < user.exp) {
       dispatch(setUser(token));
     } else {
+      AsyncStorage.removeItem("Token");
       dispatch(signout());
     }
   }
