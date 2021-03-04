@@ -1,18 +1,18 @@
-// const initialState = {
-//   user: null,
-// };
+const initialState = {
+  user: null,
+};
 
-// const reducer = (state = initialState, action) => {
-//   switch (action.type) {
-//     case "SET_USER":
-//       return {
-//         ...state,
-//         user: action.payload,
-//       };
+const reducer = (state = initialState, action) => {
+  switch (action.type) {
+    case "SET_USER":
+      return {
+        ...state,
+        user: action.payload,
+      };
 
-//     default:
-//       return state;
-//   }
-// };
+    default:
+      return state;
+  }
+};
 
-// export default reducer;
+export default reducer;

@@ -20,7 +20,6 @@ const reducer = (state = initialState, action) => {
         ],
         { cancelable: false }
       );
-      // ToastAndroid.show("Item removed!", ToastAndroid.SHORT);
       return {
         ...state,
         items: [],

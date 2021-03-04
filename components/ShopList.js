@@ -10,6 +10,10 @@ const ShopList = ({ navigation }) => {
 
   const loading = useSelector((state) => state.shopReducer.loading);
 
+  const user = useSelector((state) => state.authReducer.user);
+
+  console.log(user);
+
   const shoplist = shops.map((shop) => (
     <ShopItem navigation={navigation} shop={shop} key={shop.id} />
   ));
@@ -18,7 +22,7 @@ const ShopList = ({ navigation }) => {
     <View>
       {loading ? (
         <>
-          <Txt>Shops List</Txt>
+          <Txt style={{ marginTop: 25 }}>Shops List</Txt>
           <Spinner />
         </>
       ) : (

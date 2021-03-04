@@ -1,4 +1,4 @@
-import { Button } from "react-native";
+import { Button, ToastAndroid } from "react-native";
 import React, { useState } from "react";
 import { View } from "react-native";
 import { ImageStyle, Detail } from "../styles";
@@ -15,6 +15,7 @@ export const ProductItem = ({ product, navigation }) => {
   const addTocart = () => {
     const newProduct = { quantity, productId: product.id, id: product.id };
     dispatch(addProductToCart(newProduct));
+    ToastAndroid.show("Item added to cart!", ToastAndroid.SHORT);
   };
 
   return (
