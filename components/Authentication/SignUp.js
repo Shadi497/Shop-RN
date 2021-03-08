@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Text, ToastAndroid } from "react-native";
 import { useDispatch } from "react-redux";
-import { signin, signup } from "../../store/actions/authActions";
+import { signup } from "../../store/actions/authActions";
 import { SignButtonStyle, Signin, AuthTextInput } from "../../styles";
 import { useNavigation } from "@react-navigation/native";
 import { ScrollView } from "react-native-gesture-handler";

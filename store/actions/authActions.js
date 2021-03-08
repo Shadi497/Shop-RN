@@ -1,6 +1,5 @@
 import instance from "./instance";
 import decode from "jwt-decode";
-import { ToastAndroid } from "react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const setUser = (token) => {
@@ -18,7 +17,6 @@ export const signup = (newUser) => {
       const res = await instance.post("/signup", newUser);
       AsyncStorage.setItem("Token", res.data.token);
       dispatch(setUser(res.data.token));
-      // ToastAndroid.show("Successfully signed up", ToastAndroid.SHORT);
     } catch (error) {
       console.error(error);
     }

@@ -1,4 +1,4 @@
-import { ImageBackground, View, Text } from "react-native";
+import { Text } from "react-native";
 import React from "react";
 import {
   Title,
@@ -7,14 +7,11 @@ import {
   BottomStyling,
   ButtonStyled,
   UserTitle,
-  SignButtonStyle,
   SignOutButtonStyle,
-  SignInButtonStyle,
   Welcome,
 } from "../styles";
 import { useDispatch, useSelector } from "react-redux";
 import { signout } from "../store/actions/authActions";
-import { useNavigation } from "@react-navigation/native";
 import { Icon } from "native-base";
 
 const Home = ({ navigation }) => {

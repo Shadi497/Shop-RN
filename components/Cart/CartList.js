@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { checkout } from "../../store/actions/cartActions";
 import { ButtonStyle } from "../../styles";
 import { CartItem } from "./CartItem";
+import { ScrollView } from "react-native-gesture-handler";
 
 export const CartList = () => {
   const cart = useSelector((state) => state.cartReducer.items);
@@ -24,7 +25,7 @@ export const CartList = () => {
     .map((item) => <CartItem products={item} key={item.id} />);
 
   const handlePress = () => {
-    if (user) dispatch(checkout());
+    if (user) dispatch(checkout(cart));
     else {
       Alert.alert(
         "Warning!",
@@ -41,7 +42,7 @@ export const CartList = () => {
     }
   };
   return (
-    <View
+    <ScrollView
     //
     >
       {cartProduct.length === 0 ? (
@@ -69,6 +70,6 @@ export const CartList = () => {
           </ButtonStyle>
         </List>
       )}
-    </View>
+    </ScrollView>
   );
 };
